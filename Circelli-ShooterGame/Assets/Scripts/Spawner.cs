@@ -3,7 +3,7 @@
  * Date Created: Sept 20, 2021
  * 
  * Last Edited By: Ryan Circelli
- * Last Updated Sept 20,2021
+ * Last Updated Sept 22,2021
  * 
  * Description:Spawns Enemies
  * 
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 {
     //Variables
 
-    public float MaxRadius = 1f;
+    public float MaxRadius = 10f;
     public float Interval = 5f;
     public GameObject ObjToSpawn = null;
     private Transform Origin = null;
@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         if (Origin == null){return;}
-        Vector3 SpawnPos = Origin.position + Random.insideUnitSphere * MaxRadius;
+        Vector3 SpawnPos = Origin.position + Random.onUnitSphere * MaxRadius;
         SpawnPos = new Vector3(SpawnPos.x, 0f, SpawnPos.z);
         Instantiate(ObjToSpawn, SpawnPos, Quaternion.identity);
     }
