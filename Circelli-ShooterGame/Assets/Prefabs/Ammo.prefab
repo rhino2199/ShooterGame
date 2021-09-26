@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504118394590838888}
   - component: {fileID: 504118394590838895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ammo_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 504118395061578609}
   - component: {fileID: 504118395061578610}
   - component: {fileID: 504118395061578611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 504118395061578620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 504118394590838888}
   m_Father: {fileID: 0}
@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd827a42c7a219b4c9b4844d7c4c6302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 100
+  Lifetime: 2

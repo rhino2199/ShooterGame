@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     public string VertAxis = "Vertical";
     public string FireAxis = "Fire1";
     public float MaxSpeed = 5f;// speed
+    public float ReloadDelay = 0.3f;
+    public bool CanFire = true;
+    public Transform[] TurretTransforms;
 
     private Rigidbody ThisBody = null; //variable for the ship's rigidbody
 
@@ -41,6 +44,17 @@ public class PlayerController : MonoBehaviour
 
         ThisBody.velocity = new Vector3(Mathf.Clamp(ThisBody.velocity.x, -MaxSpeed, MaxSpeed), Mathf.Clamp(ThisBody.velocity.y, -MaxSpeed, MaxSpeed), Mathf.Clamp(ThisBody.velocity.z, -MaxSpeed, MaxSpeed));
 
+
+        if ((Input.GetButtonDown(FireAxis) && CanFire))
+        {
+            foreach(Transform T in TurretTransforms)
+            {
+                AmmoManager.SpawnAmmo(T.position, T.rotation);
+            }
+            CanFire = false;
+            Invoke("EnableFire", ReloadDelay);
+        }
+
         //Look at mouse
         if(MouseLook)
         {
@@ -54,6 +68,11 @@ public class PlayerController : MonoBehaviour
         }
 
     }//end FixedUpdate
+
+    void EnableFire()
+    {
+        CanFire = true;
+    }
 
 
 

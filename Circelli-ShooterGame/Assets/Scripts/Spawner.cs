@@ -23,6 +23,9 @@ public class Spawner : MonoBehaviour
     public float Interval = 5f;
     public GameObject ObjToSpawn = null;
     private Transform Origin = null;
+  
+
+
 
     private void Awake()
     {

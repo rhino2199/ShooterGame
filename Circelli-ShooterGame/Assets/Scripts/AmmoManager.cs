@@ -22,16 +22,6 @@ public class AmmoManager : MonoBehaviour
     public static AmmoManager AmmoManagerSingleton = null;
 
     #endregion
-    void SetAmmoManager()
-    {
-        if (AmmoManagerSingleton == null)
-        {
-            AmmoManagerSingleton = this;
-        } else
-        {
-            AmmoManagerSingleton = null;
-        }
-    }
 
     public GameObject AmmoPrefab = null;
     public int PoolSize = 100;
@@ -41,9 +31,19 @@ public class AmmoManager : MonoBehaviour
 
     private void Awake()
     {
-        SetAmmoManager();
+        if (AmmoManagerSingleton != null)
+        {
+            Destroy(GetComponent<AmmoManager>());
+            return;
+        }
+        AmmoManagerSingleton = this;
 
-        if (AmmoManagerSingleton == null) { return; }
+        if (AmmoManagerSingleton != null)
+        {
+            Destroy(GetComponent<AmmoManager>());
+        }
+        AmmoManagerSingleton = this;
+
 
         AmmoArray = new GameObject[PoolSize];
         for (int i = 0; i < PoolSize; i++)

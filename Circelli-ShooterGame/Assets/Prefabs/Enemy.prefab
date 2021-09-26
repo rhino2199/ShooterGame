@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 945282385688583569}
   - component: {fileID: 945282385688583581}
   - component: {fileID: 945282385688583580}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945282386291763833}
   - component: {fileID: 945282386291763832}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spaceship-Drakir7
   m_TagString: Untagged
   m_Icon: {fileID: 0}

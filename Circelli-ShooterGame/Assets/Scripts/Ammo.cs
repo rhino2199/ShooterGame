@@ -30,7 +30,7 @@ public class Ammo : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health H = other.gameObject.GetComponent<Health>();
-
+        if(H == null) { return; }
         H.HealthPoints -= Damage;
         Die();
     }
