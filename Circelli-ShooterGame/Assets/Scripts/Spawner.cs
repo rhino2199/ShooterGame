@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 {
     //Variables
 
-    public float MaxRadius = 10f;
+    public float MaxRadius = 100f;
     public float Interval = 5f;
     public GameObject ObjToSpawn = null;
     private Transform Origin = null;
