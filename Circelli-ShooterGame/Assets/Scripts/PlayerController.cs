@@ -79,6 +79,11 @@ public class PlayerController : MonoBehaviour
         CanFire = true;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.GameOver();
+    }
+
 
 
 }
